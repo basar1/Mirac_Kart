@@ -4,12 +4,12 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 export function PracticeSection() {
   return (
-    <section id="calisma-alanlari" className="scroll-mt-24 border-y border-line bg-surface">
+    <section id="hizmetler" className="scroll-mt-24 border-y border-line bg-surface">
       <div className="mx-auto max-w-6xl px-4 py-20">
         <SectionHeading
-          eyebrow="Faaliyet alanları"
-          title="Çalışma alanlarımız"
-          description="Aşağıdaki başlıklar, büronun sıkça yürüttüğü iş türlerini tarif eder. Her dosya kendi olguları ve yürürlükteki mevzuat çerçevesinde değerlendirilir."
+          eyebrow="Menü ve ikram"
+          title="Hizmetlerimiz"
+          description="Günlük tatlılar, toplu sipariş ve salonda misafir ağırlama. Her lezzet taze malzemeyle, işletmenin kendi standardına göre hazırlanır."
         />
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {lawyerConfig.practiceAreas.map((area, index) => (

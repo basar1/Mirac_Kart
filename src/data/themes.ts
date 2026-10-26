@@ -1,4 +1,4 @@
-export const THEME_STORAGE_KEY = "hukuk-theme";
+export const THEME_STORAGE_KEY = "hancerlioglu-theme";
 
 export const themeIds = [
   "obsidian-gold",

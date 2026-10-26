@@ -14,8 +14,8 @@ export function ContactSection() {
       <div className="mx-auto max-w-6xl px-4 py-20">
         <SectionHeading
           eyebrow="İletişim ve konum"
-          title="Ön görüşme ve ofis"
-          description="Telefon, e-posta veya WhatsApp üzerinden ulaşabilirsiniz. Randevu, ilettiğiniz konunun niteliğine göre planlanır."
+          title="Sipariş ve konum"
+          description="Telefon, e-posta veya WhatsApp üzerinden ulaşabilirsiniz. Toplu sipariş ve etkinlik talepleri birlikte planlanır."
         />
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
@@ -57,7 +57,7 @@ export function ContactSection() {
 
         <div className="mt-10 overflow-hidden rounded-3xl border border-line">
           <iframe
-            title={`${office.name} ofis konumu`}
+            title={`${office.name} konumu`}
             src={contact.mapsEmbedUrl}
             className="h-80 w-full border-0"
             loading="lazy"

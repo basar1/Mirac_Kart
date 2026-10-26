@@ -9,7 +9,7 @@ export function LegalNotice({ compact = false }: { compact?: boolean }) {
 
   return (
     <aside className="border border-line border-l-4 border-l-accent-2 bg-surface px-5 py-4">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-2">Yasal uyarı</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-2">Kurumsal not</p>
       <p className="mt-2 text-sm leading-7 text-ink-soft">{lawyerConfig.legalCompliance}</p>
     </aside>
   );

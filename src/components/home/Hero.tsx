@@ -15,14 +15,14 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.8fr)] lg:py-24">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-accent-2">
-            {office.city} · Avukatlık ve arabuluculuk
+            {office.city} · Tatlı ve ikram
           </p>
           <h1 className="mt-5 max-w-xl font-display text-4xl leading-[1.15] text-on-hero sm:text-5xl lg:text-6xl">
             {office.statement}
           </h1>
           <p className="mt-6 max-w-xl text-base leading-8 text-on-hero-muted">{office.intro}</p>
           <p className="mt-4 text-sm font-medium tracking-wide text-accent-2">
-            Mesleki ilkeler ve hukuki güvence
+            Taze malzeme, özenli sunum
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
@@ -32,13 +32,13 @@ export function Hero() {
               className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-on-accent transition hover:bg-accent-hover"
             >
               <WhatsAppIcon className="size-4" />
-              Ön Görüşme Talebi
+              WhatsApp ile Yazın
             </a>
             <Link
-              href="/#calisma-alanlari"
+              href="/#hizmetler"
               className="inline-flex items-center justify-center rounded-full border border-accent-2 px-6 py-3.5 text-sm font-semibold text-on-hero transition hover:bg-accent-soft"
             >
-              Çalışma Alanlarımız
+              Hizmetlerimiz
             </Link>
           </div>
         </div>

@@ -1,22 +1,20 @@
 import type { ReactNode } from "react";
 import {
-  Briefcase,
-  Building2,
-  Gavel,
-  Landmark,
-  ScrollText,
-  Users,
+  Cake,
+  ChefHat,
+  Coffee,
+  Store,
+  UtensilsCrossed,
   type LucideIcon,
 } from "lucide-react";
 import type { PracticeIconName } from "@/data/lawyerConfig";
 
 const practiceIcons: Record<PracticeIconName, LucideIcon> = {
-  Gavel,
-  Users,
-  Briefcase,
-  Building2,
-  Landmark,
-  ScrollText,
+  Cake,
+  Coffee,
+  Store,
+  ChefHat,
+  Utensils: UtensilsCrossed,
 };
 
 export function PracticeIcon({

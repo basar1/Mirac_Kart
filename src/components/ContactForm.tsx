@@ -42,7 +42,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="rounded-3xl border border-line bg-surface p-6 sm:p-8" noValidate>
-      <h3 className="font-display text-2xl text-ink">Ön görüşme talebi</h3>
+      <h3 className="font-display text-2xl text-ink">Sipariş ve iletişim</h3>
       <p className="mt-2 text-sm leading-6 text-muted">
         İletiniz {office.name} WhatsApp hattına açılır. Bu sayfa üzerinden bir kayıt tutulmaz.
       </p>
@@ -71,10 +71,10 @@ export function ContactForm() {
           Konu
           <select
             name="subject"
-            defaultValue="Genel bilgilendirme"
+            defaultValue="Genel"
             className="mt-1.5 w-full rounded-xl border border-line bg-input px-4 py-3 text-ink outline-none focus:border-accent-2"
           >
-            <option>Genel bilgilendirme</option>
+            <option>Genel</option>
             {practiceAreas.map((area) => (
               <option key={area.title}>{area.title}</option>
             ))}
@@ -102,7 +102,7 @@ export function ContactForm() {
         className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-on-accent transition hover:bg-accent-hover"
       >
         <WhatsAppIcon className="size-4" />
-        WhatsApp ile ön görüşme talebi
+        WhatsApp ile gönder
       </button>
     </form>
   );

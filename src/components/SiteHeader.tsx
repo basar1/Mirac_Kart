@@ -3,21 +3,20 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Clock, Mail, Menu, Phone, X } from "lucide-react";
+import { BrandMark } from "@/components/BrandMark";
 import { lawyerConfig } from "@/data/lawyerConfig";
-import { formatPhone, officeInitials } from "@/utils/format";
+import { formatPhone } from "@/utils/format";
 import { mailHref, telHref } from "@/utils/links";
 
 const links = [
   { href: "/#hakkimizda", label: "Hakkımızda" },
-  { href: "/#calisma-alanlari", label: "Çalışma Alanları" },
-  { href: "/makaleler", label: "Hukuki Makaleler" },
+  { href: "/#hizmetler", label: "Hizmetler" },
   { href: "/#iletisim", label: "İletişim" },
 ];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const { office, personalInfo, contact } = lawyerConfig;
-  const initials = officeInitials(office.name);
   const [brandName, brandSuffix = ""] = office.name.split(/\s+&\s+/);
 
   useEffect(() => {
@@ -55,9 +54,7 @@ export function SiteHeader() {
       <div className="sticky top-0 z-40 border-b border-line bg-header backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
           <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
-            <span className="grid size-11 shrink-0 place-items-center rounded-full border border-accent-2 font-display text-sm text-ink">
-              {initials}
-            </span>
+            <BrandMark className="size-11" />
             <span className="min-w-0">
               <span className="block truncate font-display text-lg leading-none text-ink">
                 {brandName}
@@ -93,7 +90,7 @@ export function SiteHeader() {
               href="/#iletisim"
               className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-on-accent transition hover:bg-accent-hover"
             >
-              Randevu / İletişim
+              Sipariş / İletişim
             </Link>
           </div>
 
@@ -134,7 +131,7 @@ export function SiteHeader() {
                 className="rounded-full bg-accent px-4 py-3 text-center text-sm font-semibold text-on-accent"
                 onClick={() => setOpen(false)}
               >
-                Randevu / İletişim
+                Sipariş / İletişim
               </Link>
             </div>
           </nav>

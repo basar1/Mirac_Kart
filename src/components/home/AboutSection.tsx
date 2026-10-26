@@ -1,23 +1,23 @@
-import { Eye, GraduationCap, Lock, Shield } from "lucide-react";
+import { Cake, ChefHat, Coffee, GraduationCap } from "lucide-react";
 import { lawyerConfig } from "@/data/lawyerConfig";
 import { SectionHeading } from "@/components/SectionHeading";
 import { lawyerPublicName } from "@/utils/format";
 
 const principles = [
   {
-    title: "Şeffaflık",
-    text: "Vekalet kapsamı, olası riskler, süreler ve süreç adımları müvekkille açıkça paylaşılır.",
-    icon: Eye,
+    title: "Tazelik",
+    text: "Tatlılar günlük üretilir. Malzeme ve içerik, misafirle açıkça paylaşılır.",
+    icon: Cake,
   },
   {
-    title: "Gizlilik",
-    text: "Mesleki sır kapsamındaki bilgi ve belgeler, yalnızca temsil için gerekli ölçüde ve mevzuata uygun işlenir.",
-    icon: Lock,
+    title: "Misafirperverlik",
+    text: "Sipariş, ikram ve salondaki lezzet deneyimi, misafirin rahat edeceği bir tempoda planlanır.",
+    icon: Coffee,
   },
   {
-    title: "Mesleki etik",
-    text: "Çalışma düzeni, Türkiye Barolar Birliği meslek kurallarına ve reklam yasağına uygun bir bilgilendirme anlayışıyla sınırlıdır.",
-    icon: Shield,
+    title: "Özen",
+    text: "Lezzet ve sunum standardı, işletmenin kendi mutfak düzenine göre her gün aynı özenle korunur.",
+    icon: ChefHat,
   },
 ];
 
@@ -34,8 +34,8 @@ export function AboutSection() {
           <div>
             <SectionHeading
               eyebrow="Hakkımızda"
-              title="Kurumsal ilkelerle sınırlı bir temsil"
-              description={`${publicName}, ${personalInfo.title.toLocaleLowerCase("tr-TR")} olarak büro faaliyetini yürütür. Sicil bilgisi ilgili meslek kuruluşu kayıtlarıyla doğrulanabilir.`}
+              title="Gelenekten gelen bir lezzet deneyimi"
+              description={`${publicName}, ${personalInfo.title.toLocaleLowerCase("tr-TR")} olarak misafir deneyimini ve ürün kalitesini yönetir.`}
             />
             <div className="mt-8 space-y-4">
               {paragraphs.map((paragraph) => (
@@ -47,7 +47,7 @@ export function AboutSection() {
           </div>
 
           <aside className="h-fit rounded-3xl border border-line bg-surface p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-2">Sicil</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent-2">İşletme</p>
             <p className="mt-3 font-display text-2xl text-ink">{publicName}</p>
             <p className="mt-2 text-sm leading-6 text-muted">{personalInfo.barRegistration}</p>
             <div className="mt-6 border-t border-line pt-6">

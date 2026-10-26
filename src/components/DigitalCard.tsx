@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import type { ComponentType } from "react";
-import { Download, Globe, MapPin, Phone, Scale } from "lucide-react";
+import { Download, Globe, MapPin, Phone } from "lucide-react";
+import { BrandMark } from "@/components/BrandMark";
 import { LegalNotice } from "@/components/LegalNotice";
 import { RoundPortrait } from "@/components/Portrait";
 import { InstagramIcon, LinkedInIcon, WhatsAppIcon, XIcon } from "@/components/icons";
@@ -36,9 +37,7 @@ export function DigitalCard() {
         <div className="pointer-events-none absolute inset-2 rounded-[22px] border border-line" />
 
         <div className="relative flex flex-col items-center text-center">
-          <span className="grid size-12 place-items-center rounded-full border border-accent-2 text-accent-2">
-            <Scale className="size-5" aria-hidden="true" strokeWidth={1.5} />
-          </span>
+          <BrandMark className="size-16" />
           <p className="mt-4 text-[11px] uppercase tracking-[0.22em] text-accent-2">{office.name}</p>
 
           <div className="mt-6 size-36 rounded-full border-2 border-accent-2 p-1">
@@ -85,7 +84,7 @@ export function DigitalCard() {
             rel="noopener noreferrer"
           >
             <MapPin className="size-5 text-accent-2" aria-hidden="true" />
-            Ofis Yol Tarifi
+            Yol Tarifi
           </a>
           <Link href="/" className={actionClass}>
             <Globe className="size-5 text-accent-2" aria-hidden="true" />

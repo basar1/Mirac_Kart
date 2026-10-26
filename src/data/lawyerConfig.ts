@@ -1,10 +1,10 @@
 /**
  * TEK MERKEZDEN YÖNETİM
- * Yeni bir avukat müşterisi geldiğinde yalnızca bu dosyayı güncelleyin.
- * Kurumsal site, makaleler ve NFC dijital kartvizit buradaki veriden üretilir.
+ * Yeni bir işletme tesliminde yalnızca bu dosyayı güncelleyin.
+ * Kurumsal site ve NFC dijital kartvizit buradaki veriden üretilir.
  *
- * Makale `content` alanı boş satırla ayrılmış paragraflardan oluşur.
- * `## ` ile başlayan bir blok ara başlık olarak gösterilir.
+ * `articles` boş bırakıldığında sitede yayın listesi gösterilmez.
+ * Doluysa `content` boş satırla ayrılmış paragraflardan oluşur; `## ` ile başlayan blok ara başlık olur.
  * `contact.website` boşsa vCard, kartın açıldığı site adresini yazar.
  *
  * `activeTheme` teslim temasını belirler.
@@ -52,13 +52,7 @@ export interface SocialLinks {
   instagram?: string;
 }
 
-export type PracticeIconName =
-  | "Gavel"
-  | "Users"
-  | "Briefcase"
-  | "Building2"
-  | "Landmark"
-  | "ScrollText";
+export type PracticeIconName = "Cake" | "Coffee" | "Store" | "ChefHat" | "Utensils";
 
 export interface PracticeArea {
   title: string;
@@ -106,7 +100,7 @@ export const lawyerConfig = {
     barRegistration: "Hançerlioğlu Gıda ve İkram Hizmetleri",
     biography:
       "Miraç Hançerlioğlu, geleneksel aile mirasını modern işletmecilik vizyonuyla birleştirerek markanın sürdürülebilir büyümesine liderlik etmektedir. Misafir deneyimini ve ürün kalitesini merkeze alan yaklaşımıyla, yerel lezzetleri yenilikçi bir sunumla misafirlerine ulaştırmaktadır.",
-    education: "Gıda İşletmeciliği ve Kurumsal Vizyon",
+    education: "Çukurova Üniversitesi İktisat Bölümü",
     photoUrl: "/mirac.jpg",
     photoAlt: "Miraç Hançerlioğlu portre fotoğrafı",
   },
@@ -132,21 +126,21 @@ export const lawyerConfig = {
   practiceAreas: [
     {
       title: "Geleneksel Tatlılar",
-      icon: "Building2",
+      icon: "Cake",
       summary: "Yılların tecrübesiyle hazırlanan imza lezzetler.",
       description:
         "En taze kuruyemişler ve doğal şeker pancarı kullanılarak hazırlanan baklava, kadayıf ve yöresel tatlı çeşitlerimiz, ustalarımızın el emeğiyle günlük olarak üretilir.",
     },
     {
       title: "Kurumsal İkram & Etkinlik",
-      icon: "Briefcase",
+      icon: "Utensils",
       summary: "Özel günleriniz için toplu sipariş ve organizasyon desteği.",
       description:
         "Düğün, nişan, kurumsal toplantı ve özel etkinlikleriniz için kişi sayısına özel tepsilerde dilediğiniz tatlı çeşitleriyle profesyonel ikram çözümleri sunuyoruz.",
     },
     {
       title: "Misafir Ağırlama",
-      icon: "Users",
+      icon: "Coffee",
       summary: "Ferah mekanımızda eşsiz lezzet deneyimi.",
       description:
         "Geniş ve konforlu salonumuzda, aileniz ve sevdiklerinizle birlikte taze çayımız eşliğinde tatlılarımızı deneyimleyebilir, kaliteli vakit geçirebilirsiniz.",

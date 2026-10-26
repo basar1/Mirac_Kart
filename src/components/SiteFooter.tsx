@@ -6,8 +6,7 @@ import { mailHref, telHref } from "@/utils/links";
 
 const quickLinks = [
   { href: "/#hakkimizda", label: "Hakkımızda" },
-  { href: "/#calisma-alanlari", label: "Çalışma Alanları" },
-  { href: "/makaleler", label: "Hukuki Makaleler" },
+  { href: "/#hizmetler", label: "Hizmetler" },
   { href: "/#iletisim", label: "İletişim" },
   { href: "/kart", label: "Dijital Kartvizit" },
 ];
@@ -83,7 +82,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 pb-8">
         <LegalNotice />
         <p className="mt-6 text-xs text-muted">
-          © {year} {office.name}. Bilgilendirme amaçlı kurumsal yayın.
+          © {year} {office.name}. Tüm hakları saklıdır.
         </p>
       </div>
     </footer>
