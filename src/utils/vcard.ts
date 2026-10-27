@@ -13,29 +13,6 @@ function normalizePhone(phone: string): string {
   return phone.trim().startsWith("+") ? `+${digits}` : digits;
 }
 
-function vcardFileName(fullName: string): string {
-  const ascii = fullName
-    .replace(/ç/g, "c")
-    .replace(/Ç/g, "c")
-    .replace(/ğ/g, "g")
-    .replace(/Ğ/g, "g")
-    .replace(/ı/g, "i")
-    .replace(/İ/g, "i")
-    .replace(/ö/g, "o")
-    .replace(/Ö/g, "o")
-    .replace(/ş/g, "s")
-    .replace(/Ş/g, "s")
-    .replace(/ü/g, "u")
-    .replace(/Ü/g, "u")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-
-  return `${ascii || "kartvizit"}.vcf`;
-}
-
 function pushLine(lines: string[], value: string | null): void {
   if (value) lines.push(value);
 }
@@ -66,43 +43,13 @@ export function buildVCard(config: LawyerConfig, website: string): string {
   return `\uFEFF${lines.join("\r\n")}\r\n`;
 }
 
-function isIosDevice(): boolean {
-  const ua = navigator.userAgent;
-  if (/iPad|iPhone|iPod/i.test(ua)) return true;
-  // iPadOS 13+ Safari, userAgent içinde Macintosh yazar.
-  return /Macintosh/i.test(ua) && navigator.maxTouchPoints > 1;
-}
-
-function triggerDownload(content: string, fileName: string): void {
-  const blob = new Blob([content], { type: "text/vcard;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement("a");
-  anchor.href = url;
-  anchor.download = fileName;
-  anchor.rel = "noopener";
-  anchor.style.display = "none";
-  document.body.appendChild(anchor);
-  anchor.click();
-  anchor.remove();
-  window.setTimeout(() => URL.revokeObjectURL(url), 1500);
-}
-
 /**
- * Tıklanınca UTF-8 vCard 3.0 üretir.
- * iPhone ve iPad’de Safari Kişiler’i data URI ile açar.
- * Android ve masaüstünde Blob ile .vcf indirilir.
+ * Telefonda Kişiler uygulaması yalnızca gerçek bir .vcf adresini açar.
+ * Safari, script ile açılan data: ve blob: indirmelerini yok sayar.
  */
-export function downloadVCard(config: LawyerConfig): void {
-  if (typeof window === "undefined" || typeof document === "undefined") return;
+export const VCARD_HREF = "/mirac-hancerlioglu.vcf";
 
-  const website = config.contact.website.trim() || window.location.origin;
-  const content = buildVCard(config, website);
-
-  if (isIosDevice()) {
-    const vcardText = content.replace(/^\uFEFF/, "");
-    window.location.href = `data:text/vcard;charset=utf-8,${encodeURIComponent(vcardText)}`;
-    return;
-  }
-
-  triggerDownload(content, vcardFileName(config.personalInfo.fullName));
+export function downloadVCard(): void {
+  if (typeof window === "undefined") return;
+  window.location.assign(VCARD_HREF);
 }

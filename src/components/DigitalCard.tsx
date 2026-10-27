@@ -8,7 +8,7 @@ import { LegalNotice } from "@/components/LegalNotice";
 import { RoundPortrait } from "@/components/Portrait";
 import { InstagramIcon, LinkedInIcon, WhatsAppIcon, XIcon } from "@/components/icons";
 import { lawyerConfig } from "@/data/lawyerConfig";
-import { downloadVCard } from "@/utils/vcard";
+import { VCARD_HREF } from "@/utils/vcard";
 import { telHref, whatsappHref } from "@/utils/links";
 
 const actionClass =
@@ -51,14 +51,13 @@ export function DigitalCard() {
           <p className="mt-2 max-w-xs text-xs leading-5 text-on-hero-muted">{personalInfo.barRegistration}</p>
         </div>
 
-        <button
-          type="button"
-          onClick={() => downloadVCard(lawyerConfig)}
+        <a
+          href={VCARD_HREF}
           className="relative mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-5 py-4 text-base font-semibold text-on-accent shadow-lg transition hover:bg-accent-hover"
         >
           <Download className="size-5" aria-hidden="true" />
           Rehbere Kaydet (.vcf)
-        </button>
+        </a>
         <p className="relative mt-2 text-center text-[11px] text-on-hero-muted">
           iPhone ve Android rehberlerine uygun vCard dosyası.
         </p>

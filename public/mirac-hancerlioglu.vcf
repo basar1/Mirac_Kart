@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N;CHARSET=UTF-8:Hançerlioğlu;Miraç;;;
+FN;CHARSET=UTF-8:Miraç Hançerlioğlu
+ORG;CHARSET=UTF-8:Hançerlioğlu
+TITLE;CHARSET=UTF-8:Kurucu & İşletmeci
+TEL;TYPE=CELL,VOICE:+905435901885
+EMAIL;TYPE=INTERNET:miraacdogan@gmail.com
+ADR;CHARSET=UTF-8;TYPE=WORK:;;Alata\, Erdemoğlu Blv. No: 183 A\, 33730 Erdemli / Mersin;;;;
+END:VCARD
